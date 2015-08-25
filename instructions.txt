@@ -1,0 +1,14 @@
+Project Of The Week: Sudoku Solver
+For the first week's project, you'll be building an application that solves Sudoku puzzles. More details will follow soon, but here's a broad outline.
+
+This project will have 4 modules, each implementing a constructor:
+
+DigitSet: each instance of a DigitSet will represent a subset of 9 possible characters '1'-'9'. Each set of digits should be unordered and have no duplicates; that is, each each possible digit is either present or absent from the set. You'll need this to represent the partial knowledge available in each Sudoku square.
+
+Grid: each Grid instance will represent a 9x9 grid of squares, each holding a known digit or a set of possible digits. Each square belongs to three different groups: a row, a column, and a 3x3 block.
+
+This object will have methods for retrieving certain squares and groups, for getting and setting the possible digits in each square, and for importing and exporting the entire grid into other formats.
+
+Viewer: a viewer instance will be responsible for the display of a board, with various methods to represent its board as a string or, eventually, a browser graphic.
+
+Solver: a solver instance will be able to deduce the contents of uncertain squares and eventually solve the entire grid.
