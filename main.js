@@ -14,25 +14,44 @@ viewer.show();
 // IIFE's?
 
 //DigitSet constructor
-var DigitSet = (function(squareID) {
-	var num_array = [1,2,3,4,5,6,7,8,9];
-	//DigitSet.makeSquare = 
-	//DigitSet.makeBlock = 
-	//DigitSet.makeGrid = 
+var DigitSet = (function() {
+
+	var idDigitSet = [1,2,3,4,5,6,7,8,9];
+	
 })();
 
 
 // var ___ = require('lodash')
 // module.exports('DigitSet')
+
 // Grid constructor
-var Grid = (function(row, column, /*key? row and column index*/) {
-	//if (squareID === undefined) {
-		//DigitSet();
-	//} else {
-		// return squareID value ? row[0] && column[0]
-		// 
-	//};
+var Grid = (function() {
+	var 
+	var sBoard = initString.split('\n')[0].split('');
+	
+	for 
+
+	row: function() {
+		return Math.floor(id % 9);
+	},
+	column: function() {
+		return (id % 9);
+	},
+	block: function(row, column) {
+		return (Math.floor(row/3) * 3) + (Math.floor(column/3));
+	},
+	group: function() {
+		//return row, column, block per id
+	},
+	neighborhood: function(group) {
+		// return all values in row
+		// all values in column
+		// all values in block
+	};
+
+return Grid;
 })();
+
 
 //Viewer constructor
 //See sudoku_viewer.js for completed grid
