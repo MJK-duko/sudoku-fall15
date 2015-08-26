@@ -1,9 +1,12 @@
+
+
+
+
 var DigitSet = require('./digitset');
 var string = ".94...13..............76..2.8..1.....32.........2...6.....5.4.......8..7..63.4..8"
 
 function Grid(initstr) {
 	var sBoard = initstr.split('\n')[0].split('');
-
 	for (var id = 0; id < sBoard.length; id++) {
 		console.log(DigitSet[id]);
 	};
@@ -15,10 +18,7 @@ module.exports = Grid;
 
 
 
-
-
-
-	var 
+/*	var 
 	var sBoard = initString.split('\n')[0].split('');
 	
 	for 
@@ -42,4 +42,4 @@ module.exports = Grid;
 	};
 
 return Grid;
-})();
+})();*/
