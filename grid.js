@@ -59,8 +59,18 @@ function Grid() {
 	},
 	remaining: function() {
 		// number (0-81) of uncertain cells
-	};
 
+// function Grid(initstr) {
+// 	var sBoard = initstr.split('\n')[0].split('');
+// 	for (var id = 0; id < sBoard.length; id++) {
+// 		console.log(DigitSet[id]);
+
+	// };
+
+/*	var 
+	var sBoard = initString.split('\n')[0].split('');
+	
+	for 
 
 
 	row: function() {
@@ -82,6 +92,10 @@ function Grid() {
 	};
 
 return Grid;
+<<<<<<< HEAD
 };
 
 module.exports = Grid;
+=======
+})();*/
+
