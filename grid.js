@@ -1,27 +1,67 @@
 var DigitSet = require('./digitset');
-var string = ".94...13..............76..2.8..1.....32.........2...6.....5.4.......8..7..63.4..8"
 
-function Grid(initstr) {
-	var sBoard = initstr.split('\n')[0].split('');
+new Grid(initString) // grid instance
+new Grid() // grid instance
 
-	for (var id = 0; id < sBoard.length; id++) {
-		console.log(DigitSet[id]);
+function Grid() {
+	cells: function() {
+		// array of all cell tokens
+	},
+	cells: function(groupToken) {
+		// array of cell tokens associated with groupToken
+	},
+	groups: function() {
+		//array of all group tokens
+	}, 
+	groups: function(cellToken) {
+		// array of all group tokens associated with cellToken
+	},
+	getRow: function() {
+		// array of grouTokens (all rows)
+	},
+	getRow: function(cellToken) {
+		// groupToken (row)
+	},
+	getCol: function() {
+		// array of groupTokens (all cols)
+	},
+	getCol: function(cellToken) {
+		// groupToken (col)
+	}
+	getBlock: function() {
+		// array of groupTokens (all blocks)
+	},
+	getPossible: function(cellToken) {
+		// digitSet
+	},
+	setPossible: function(cellToken, digitSet) {
+		// ?
+	},
+	neighborhood: function(cellToken) {
+		// digitSet of all known digits in digits in same row, 
+		// col, or block OR
+		// array of digitSets of all neighbors
+	},
+	fromString: function(initString) {
+		// set up grid with known digits
+	},
+	toString: function() {
+		// initString
+	},
+	save: function() {
+		//savedState
+	},
+	restore: function(savedState) {
+		//
+	},
+	isInvalid: function() {
+		//return true if notices any problems, else false?
+	},
+	remaining: function() {
+		// number (0-81) of uncertain cells
 	};
-};
-
-console.log(Grid(string));// for testing only
-
-module.exports = Grid;
 
 
-
-
-
-
-	var 
-	var sBoard = initString.split('\n')[0].split('');
-	
-	for 
 
 	row: function() {
 		return Math.floor(id % 9);
@@ -42,4 +82,6 @@ module.exports = Grid;
 	};
 
 return Grid;
-})();
+};
+
+module.exports = Grid;
