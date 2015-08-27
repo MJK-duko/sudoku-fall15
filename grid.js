@@ -17,7 +17,7 @@ function Grid() {
 		// array of all group tokens associated with cellToken
 	},
 	getRow: function() {
-		// array of grouTokens (all rows)
+		// array of groupTokens (all rows)
 	},
 	getRow: function(cellToken) {
 		// groupToken (row)
