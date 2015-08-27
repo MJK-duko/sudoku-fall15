@@ -37,7 +37,13 @@ function DigitSet() {
 	};
 
 		DigitSet.prototype.contains = function(num){
-				return (num in possibilities);
+				for (keys in this.possibilities){
+				if (this.possibilities[keys] === num){
+					return true;
+				}else {
+					return false;
+				}
+			}
 
 	};
 
