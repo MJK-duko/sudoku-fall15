@@ -35,7 +35,7 @@ function DigitSet() {
 			},
 		}
 		
-		size: function () {
+		size: function () { 
 		// --> integer 0-9; how many digits are possible here
 		},
 
