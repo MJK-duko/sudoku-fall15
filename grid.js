@@ -8,7 +8,7 @@
 
 function Grid(initString){
 	var sBoard = [];
-	var gridArray = initString.split("");
+	gridArray = initString.split("");
 		for(i=0;i<gridArray.length; i++){
 		 
 		 if(gridArray[i] === "."){
