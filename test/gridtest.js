@@ -29,7 +29,7 @@ describe('Grid constructor', function() {
 	    	expect(groups(cellToken)).to.be.a('array');
 	    })
 	  }),
-	
+
 	describe('getRow()', function() {
 	  	it('array of groupTokens (all rows)', function() {
 	    	expect(getRow).to.be.a('array');
@@ -65,7 +65,7 @@ describe('Grid constructor', function() {
 			expect(getPossible).to.be.a('array');
 		})
 	}),
-	
+
 	describe('setPossible(cellToken, digitSet)', function() {
 		it('?'), function() {
 			expect(setPossible).to.not.be.ok;
@@ -73,7 +73,7 @@ describe('Grid constructor', function() {
 	}),
 
 	describe('neighborhood(cellToken)', function() {
-		it('digitSet of all known digits in digits in same row, col, or block 
+		it('digitSet of all known digits in digits in same row, col, or block
 			OR array of digitSets of all neighbors'), function() {
 			expect(neighborhood(cellToken)).to.be.a('array'));
 		})

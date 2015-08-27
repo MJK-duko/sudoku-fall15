@@ -1,102 +1,72 @@
 var underScore = require('lodash');
-var grid = require('./grid');
 
 function DigitSet() {
-	
-	var arr = [1,2,3,4,5,6,7,8,9];
-	this.possibilities = arr
-		
-		valueOfSq: function(num){
-			if (num === '.'){
-				return arr;
-			} else {
-				return num;
-			}
-		},
 
-		eliminate: function(known){
-			for(i=0; i<=arr.length; i++){
-				if(known === this.arr[i]){
-					this.arr.splice(i,1);
+	this.possibilities = [1,2,3,4,5,6,7,8,9];
+
+}
+
+		DigitSet.prototype.size = function () {
+			return this.possibilities.length;
+	};
+
+		DigitSet.prototype.set = function(arrayOfDigits){
+			this.possibilities = arrayOfDigits;
+			// return this.possibilities;
+	};
+
+		DigitSet.prototype.add = function(digit) {
+			this.possibilities.push(digit);
+	};
+
+		DigitSet.prototype.eliminate = function(digit){
+				for(i=0; i<=this.possibilities.length; i++){
+					if(digit === this.possibilities[i]){
+						this.possibilities.splice(i,1);
+					}
 				}
-			}
-		},		
-		
-		contains: function(num){
-			return (num in arr);
+	};
 
-		},
 
-		isInError: function(){
-			if (arr.length < 1){
-				return true;
-			} else {
-				return false;
-			},
-		}
-		
-		size: function () { 
-		// --> integer 0-9; how many digits are possible here
-		},
+		DigitSet.prototype.toString = function() {
+			this.possibilities = this.possibilities.join();
+	};
 
-		set: function(arrayOfDigits){
+		DigitSet.prototype.toArray = function(){
+			this.possibilities.split(",");
+	};
 
-		},
+		DigitSet.prototype.contains = function(num){
+				return (num in possibilities);
 
-		add: function(digit) {
-			//--> undefined, modify original
-		},
+	};
 
-		add: function(digitSet) {
-			//--> undefined, modify original
-		},
-
-		eliminate: function(digit){
-			//--> modify
-		}, 
-
-		eliminate: function(digitSet){
-
-		},
-
-		toString: function() {
-			//--> string of digits in set
-		},
-
-		toArray: function(){
-			// --> array of digits
-		},
-
-		isUncertain: function(){
-		// --> boolean
-		},
-
-		contains: function(digit) {
-		//	--> boolean
-		},
-
-		
-	}
-		return possibilities;
-	}
+		DigitSet.prototype.isUncertain = function(){
+				if (possibilities.length < 1){
+					return true;
+				} else {
+					return false;
+				}
+	};
 
 //console.log(DigitSet);// for testing only
+
+// probably not needed...
+		// add: function(digitSet) {
+		// 	//--> undefined, modify original
+		// },
+		// eliminate: function(digitSet){
+		//
+		// },
 
 module.exports = DigitSet;
 
 
-var newThing = new DigitSet();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// var niner = new DigitSet();
+// niner.set([1,2,3]);
+// niner.add(9);
+// niner.eliminate(9);
+// niner.eliminate(1);
+// niner.eliminate(2);
+// niner.toString()
+// console.log(niner);
