@@ -6,17 +6,17 @@ var expect = chai.expect;
 
 
 describe('DigitSet testing', function() {
-  
-//valueOfSq	
+
+//valueOfSq
   describe('The value of each square', function() {
     it('should return a number or an array.', function() {
-      expect(valueOfSq).to.be.a('number' || 'array')}});
+      expect(valueOfSq()).to.be.a('number' || 'array')}});
 
 !!//eliminate
    describe('The length of the array', function() {
     it('should eliminate one or more indexes from array', function() {
       expect(eliminate).to.be.below('the length of the original array')}});
-   
+
 !!//contains
    describe('The DigitSet should contain', function() {
     it('should return a number or an array.', function() {
@@ -79,7 +79,7 @@ describe('DigitSet testing', function() {
       expect(valueOfSq).to.be.a('number' || 'array')}});
 
 
-   
+
 
 
 

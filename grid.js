@@ -1,25 +1,23 @@
-//var DigitSet = require('./digitset');
+var DigitSet = require('./digitset');
 
-//new Grid(initString) // grid instance
-//new Grid() // grid instance
+// new Grid(initString) // grid instance
+// new Grid() // grid instance
 
-
-//for 
 
 function Grid(initString){
 	var sBoard = [];
 	gridArray = initString.split("");
 		for(i=0;i<gridArray.length; i++){
-		 
+
 		 if(gridArray[i] === "."){
 		 	 sBoard[i] =  new DigitSet();
 		 	} else {
 		 		sBoard[i] = new DigitSet();
 		 		sBoard[i].set(gridArray[i]);
-		 		 
+
 		 	};
-	}	
-	
+	}
+
 	};
 
 
@@ -60,7 +58,7 @@ function Grid(initString){
 		// array of groupTokens (all rows)
 	};
 	Grid.prototype.getRow =  function(cellToken) {
-		return this.groups(cellToken)[0];	
+		return this.groups(cellToken)[0];
 	};
 	Grid.prototype.getCol = function() {
 		return ["C: 0", "C: 1", "C: 2", "C: 3", "C: 4", "C: 4", "C: 5", "C: 6", "C: 7", "C: 8"];
@@ -84,23 +82,25 @@ function Grid(initString){
 		// ?
 	};
 	Grid.prototype.neighborhood = function(cellToken) {
-		
+
 		var sesame = this.groups(cellToken);
 		var trashCan = [];
-		var vals = (this.cells(sesame[0])).concat(this.cells(sesame[1])).concat(this.cells(sesame[2])); 
+		var vals = (this.cells(sesame[0])).concat(this.cells(sesame[1])).concat(this.cells(sesame[2]));
 		for (i=0;i<81;i++){
-			if (sBoard[vals[i]] !== "."){ <<<< WE NEED 
+			if (sBoard[vals[i]] !== "."){
 			trashCan.push(sBoard[vals[i]]);
 		}
 	}
-	    // digitSet of all known digits in digits in same row, 
+	    // digitSet of all known digits in digits in same row,
 		// col, or block OR
 		// array of digitSets of all neighbors
 	};
+
 	Grid.prototype.fromString =  function(initString) {
 		var gridArray = initString.split("");
 		for(i=0;i<gridArray.length; i++){
 		 sBoard[i] = DigitSet();// set up grid with known digits
+		}
 	};
 	Grid.prototype.toString = function() {
 		// initString
@@ -143,10 +143,10 @@ var game1 = new Grid('.94...13..............76..2.8..1.....32.........2...6.....
 
 	// };
 
-/*	var 
+/*	var
 	var sBoard = initString.split('\n')[0].split('');
-	
-	for 
+
+	for
 
 
 	row: function() {
@@ -170,8 +170,7 @@ var game1 = new Grid('.94...13..............76..2.8..1.....32.........2...6.....
 return Grid;
 <<<<<<< HEAD
 };
-
-module.exports = Grid;
 =======
 })();*/
 
+module.exports = Grid;

@@ -60,4 +60,3 @@ describe('Viewer testing', function() {
       assert.equal(fakeArray.push(7), 4);
     });
   });
-});
