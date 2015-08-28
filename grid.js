@@ -158,7 +158,7 @@ function Grid(initString){
 		if (this.possibilities)
 		//return true if notices any problems, else false?
 	};
-	
+
 	Grid.prototype.remaining = function() {
 		// if (sBoard.length > 1){
 		// 	return id;
