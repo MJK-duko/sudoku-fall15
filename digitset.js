@@ -23,10 +23,15 @@ function DigitSet() {
 			for(i=0; i<=this.possibilities.length; i++){
 				if(digit === this.possibilities[i]){
 					this.possibilities.splice(i,1);
+					console.log(i);
 				}
 			}
 	};
 
+	DigitSet.prototype.eliminate = function(digitSet){
+
+	};
+	
 
 	DigitSet.prototype.toString = function() {
 		this.possibilities = this.possibilities.join();
@@ -36,15 +41,20 @@ function DigitSet() {
 		this.possibilities.split(",");
 	};
 
-	DigitSet.prototype.contains = function(num){
-		for (keys in this.possibilities){
-			if (this.possibilities[keys] === num){
-				return true;
-			} else {
-				return false;
-			}
-		}
 
+
+	DigitSet.prototype.contains = function(num){
+		var counter = false;
+		for (var i = 0; i < 8; i++){
+
+		if (this.possibilities[i] === num){
+				console.log(this.possibilities[i]);
+				counter = true;
+			} 
+			
+		
+	}
+	return counter;
 	};
 
 	DigitSet.prototype.isUncertain = function(){

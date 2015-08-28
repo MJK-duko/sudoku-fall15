@@ -1,4 +1,4 @@
-var digitset = require("../digitset.js");
+var DigitSet = require("../digitset.js");
 var assert = require('assert');
 var chai = require('chai');
 var expect = chai.expect;
@@ -14,102 +14,178 @@ var expect = chai.expect;
 
 describe('DigitSet testing', function() {
 
-//valueOfSq
-  describe('The value of each square', function() {
-    it('should return a number or an array.', function() {
-      expect(valueOfSq()).to.be.a('number' || 'array');
+
+//size ----- IS WORKING
+  describe('The size of the DigitSet', function() {
+    var dTester = new DigitSet();
+    it('should be equal to 9', function() {
+      expect(dTester.size()).to.equal(9);
     });
   }),
+
+
+
+//set ---- IS WORKING
+   describe('The digitSet set function can accept a new array', function() {
+    var dTester = new DigitSet();
+
+    before( function(){
+      dTester.set([1,2,3]);
+
+    });
+    it('should return an array of digits', function() {
+      expect(dTester.possibilities).to.deep.equal([1,2,3]);
+    });
+  }),
+
+/*  DigitSet.prototype.set = function(arrayOfDigits){
+    this.possibilities = arrayOfDigits;
+    // return this.possibilities;
+  };*/
+
+
+//add --- IS WORKING
+   describe('The digitSet can be added into', function() {
+    var dTester = new DigitSet();
+
+    before(function(){
+      dTester.add(10);
+    });
+
+
+    it('should add a new number to the array', function() {
+      expect(dTester.possibilities).to.include(10);
+    });
+  }),
+
+//expect([1,2,3]).to.include(2);
 
 //eliminate
-   describe('The length of the array', function() {
+   describe('The DigitSet be able to eliminate', function() {
+     var dTester = new DigitSet();
+
+     before(function() {
+      dTester.eliminate(7);
+    });
+
     it('should eliminate one or more indexes from array', function() {
-      expect(eliminate).to.be.below('the length of the original array');
+      expect(dTester.possibilities).to.not.include(7);
     });
   }),
 
-//contains
-   describe('The DigitSet should contain', function() {
-    it('should return a number or an array.', function() {
-      expect(valueOfSq).to.be.a('number' || 'array');
-    });
-  }),
 
-//isInError
+
+//toString
    describe('The digitSet', function() {
     it('should return a number or an array.', function() {
-      expect(valueOfSq).to.be.a('number' || 'array');
+      expect(toString).to.be.a('number' || 'array');
+    });
+  }),
+
+
+
+//toArray
+   describe('The digitSet', function() {
+    it('should return a number or an array.', function() {
+      expect(toArray).to.be.a('number' || 'array');
+    });
+  }),
+
+
+
+//contains ----- IS WORKING
+   describe('The DigitSet should contain', function() {
+    var dTester = new DigitSet();
+    
+    it('should contain', function() {
+      expect(dTester.contains(2)).to.equal(true);
+    });
+  })
+
+
+})
+
+/*  DigitSet.prototype.contains = function(num){
+    for (keys in this.possibilities){
+      if (this.possibilities[keys] === num){
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+  };
+
+*/
+
+//isUncertain
+/*   describe('The digitSet', function() {
+    it('should return a number or an array.', function() {
+      expect(isUncertain).to.be.a('number' || 'array');
+    /*});*/
+
+
+
+/*
+//isUncertain
+   describe('The digitSet', function() {
+    var dTester = new DigitSet();
+    it('should return a number or an array.', function() {
+      expect(isUncertain).to.be.a('number' || 'array');
     });
   }),
 
 //size
    describe('The digitSet', function() {
+    var dTester = new DigitSet();
     it('should return a number or an array.', function() {
-      expect(valueOfSq).to.be.a('number' || 'array');
+      expect(size).to.be.a('number' || 'array');
     });
   }),
 
 //set
    describe('The digitSet', function() {
+    var dTester = new DigitSet();
     it('should return a number or an array.', function() {
-      expect(valueOfSq).to.be.a('number' || 'array');
+      expect(set).to.be.a('number' || 'array');
     });
   }),
 
-//add
-   describe('The digitSet', function() {
-    it('should return a number or an array.', function() {
-      expect(valueOfSq).to.be.a('number' || 'array');
-    });
-  }),
+
 
 //contains
    describe('The digitSet', function() {
+    var dTester = new DigitSet();
     it('should return a number or an array.', function() {
-      expect(valueOfSq).to.be.a('number' || 'array');
+      expect(contains).to.be.a('number' || 'array');
     });
   }),
 
 //eliminate
    describe('The digitSet', function() {
+    var dTester = new DigitSet();
     it('should return a number or an array.', function() {
-      expect(valueOfSq).to.be.a('number' || 'array');
+      expect(eliminate).to.be.a('number' || 'array');
     });
   }),
 
 //eliminate()
    describe('The digitSet', function() {
     it('should return a number or an array.', function() {
-      expect(valueOfSq).to.be.a('number' || 'array');
+      expect(eliminate()).to.be.a('number' || 'array');
     });
   }),
 
 
-//toString
-   describe('The digitSet', function() {
-    it('should return a number or an array.', function() {
-      expect(valueOfSq).to.be.a('number' || 'array');
-    });
-  }),
 
-//toArray
-   describe('The digitSet', function() {
-    it('should return a number or an array.', function() {
-      expect(valueOfSq).to.be.a('number' || 'array');
-    });
-  }),
 
-//isUncertain
-   describe('The digitSet', function() {
-    it('should return a number or an array.', function() {
-      expect(valueOfSq).to.be.a('number' || 'array');
-    });
-  }),
+
 
 //contains
    describe('The digitSet', function() {
     it('should return a number or an array.', function() {
-      expect(valueOfSq).to.be.a('number' || 'array');
+      expect(contains).to.be.a('number' || 'array');
     });
   });
 });
+*/
