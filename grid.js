@@ -6,7 +6,8 @@ var DigitSet = require('./digitset');
 
 function Grid(initString){
 	var sBoard = [];
-	gridArray = initString.split("");
+
+	var gridArray = initString.split("");
 		for(var i=0;i<gridArray.length; i++){
 
 		 if(gridArray[i] === "."){
@@ -16,6 +17,7 @@ function Grid(initString){
 		 		sBoard[i].set(gridArray[i]);
 
 		 	}
+
 	}
 }
 
@@ -34,6 +36,8 @@ function Grid(initString){
 		// otherwise, just return an array of all the cell tokens
 		return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80];
 	}
+
+
 	};
 
 	Grid.prototype.groups = function() {
@@ -85,8 +89,8 @@ function Grid(initString){
 		for (i=0;i<81;i++){
 			if (sBoard[vals[i]] !== "."){
 			trashCan.push(sBoard[vals[i]]);
+			}
 		}
-	}
 	    // digitSet of all known digits in digits in same row,
 		// col, or block OR
 		// array of digitSets of all neighbors
@@ -94,22 +98,28 @@ function Grid(initString){
 
 	Grid.prototype.fromString =  function(initString) {
 		var gridArray = initString.split("");
+
 		for(i=0;i<gridArray.length; i++){
-		 sBoard[i] = DigitSet();// set up grid with known digits
+		 	sBoard[i] = DigitSet();// set up grid with known digits
 		}
 	};
+
 	Grid.prototype.toString = function() {
 		// initString
 	};
+
 	Grid.prototype.save = function() {
 		//savedState
 	};
+
 	Grid.prototype.restore = function(savedState) {
 		//
 	};
+
 	Grid.prototype.isInvalid = function() {
 		//return true if notices any problems, else false?
 	};
+	
 	Grid.prototype.remaining = function() {
 		if (cellToken[id].length > 1){
 			return id;
