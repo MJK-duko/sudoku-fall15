@@ -119,7 +119,7 @@ function Grid(initString){
 	Grid.prototype.isInvalid = function() {
 		//return true if notices any problems, else false?
 	};
-	
+
 	Grid.prototype.remaining = function() {
 		if (cellToken[id].length > 1){
 			return id;
