@@ -14,7 +14,7 @@ function Grid(initString){
 		if(gridArray[i] === "."){
 		 	this.sBoard[i] =  new DigitSet();
 		} else {
-		 	this.sBoard[i] = new DigitSet(i);
+		 	this.sBoard[i] = new DigitSet();
 		 	this.sBoard[i].set(gridArray[i]);
 		}
 
@@ -41,7 +41,7 @@ function Grid(initString){
 
 
 	Grid.prototype.groups = function(cellToken) {
-		if (cellToken) {
+		if (cellToken >= 0) {
 			var row = ("R: " + (Math.floor(cellToken/9)));
 			var col = ("C: " + (cellToken % 9));
 			var block = ("B: " + ((Math.floor((Math.floor(cellToken/9))/3) * 3) + Math.floor((cellToken % 9)/3)));
@@ -90,17 +90,17 @@ function Grid(initString){
 
 	Grid.prototype.neighborhood = function(cellToken) {
 
-		// var sesame = this.groups(cellToken);
-		// var trashCan = [];
-		// var vals = (this.cells(sesame[0])).concat(this.cells(sesame[1])).concat(this.cells(sesame[2]));
-		// for (var i = 0; i < 81; i++){
-		// 	if (sBoard[vals[i]] !== "."){
-		// 		trashCan.push(sBoard[vals[i]]);
-		// 	// } else {
+		var sesame = this.groups(cellToken);
+		var trashCan = [];
+		var vals = (this.cells(sesame[0])).concat(this.cells(sesame[1])).concat(this.cells(sesame[2]));
+		for (var i = 0; i < 81; i++){
+			if (sBoard[vals[i]] !== "."){
+				trashCan.push(sBoard[vals[i]]);
+			// } else {
 
-			// }
-		// }
-	    // digitSet of all known digits in digits in same row,
+			}
+		}
+	  //   digitSet of all known digits in digits in same row,
 		// col, or block OR
 		// array of digitSets of all neighbors
 	};
@@ -127,10 +127,15 @@ function Grid(initString){
 	Grid.prototype.groupHas = function(groupToken) {
 		var squares = this.cells(groupToken);
 		var blurg = new DigitSet();
-
+		var arr = [];
 		for(var i=0; i < squares.length; i++){
-			blurg[i].set(squares[i]);
+			if (this.sBoard[squares[i]].possibilites >= 0) {
+			arr.push(this.sBoard[squares[i]].possibilites);
 		}
+		}
+		blurg.set(arr);
+		console.log(blurg);
+		return blurg;
 	}
 
 	Grid.prototype.groupNeeds = function(groupToken) {
