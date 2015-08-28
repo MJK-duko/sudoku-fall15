@@ -20,11 +20,11 @@ function DigitSet() {
 	};
 
 	DigitSet.prototype.eliminate = function(digit){
-			for(i=0; i<=this.possibilities.length; i++){
-				if(digit === this.possibilities[i]){
-					this.possibilities.splice(i,1);
-				}
+		for(var i=0; i<=this.possibilities.length; i++){
+			if(digit === this.possibilities[i]){
+				this.possibilities.splice(i,1);
 			}
+		}
 	};
 
 
