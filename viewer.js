@@ -2,38 +2,33 @@
 
 function SudokuViewer(grid) {
 	// string depicting 9x9 grid of digits known with certainty use own game with game.toString(), then squarify that string
+
 	showCertain: function() {
+		var viewer = ""
+
+		for (var squares in grid) {
+		    if (squares % 27 === 0) {
+		     viewer += "|\n|----------+----------+----------";
+		    }
+		    if (squares % 9 === 0) {
+				viewer += "|\n";
+			}
+		    if (squares % 3 === 0) {
+				viewer += "| "
+			}
+		  viewer += (grid[squares] + "  ")
+		}
+		viewer += "|\n|----------+----------+----------|";
+
+		console.log(viewer)
 
 	},
-	// decorate finished group
-	updateView: function() {
 
-	},
 	// richer display including partial info
 	showPossible: function() {
 
-	},
-	// unknown functionality...
-	showDebug: function() {
-
-	},
-	// show number of possibilities at some cell
-	showHint: function(cellToken) {
-
-	},
-	// store snapshot /* call grid.toString(), store that */
-	snapshot: function() {
-
-	},
-	// replay all shapshots /* call series of viewer.showCertain() for each stored snapshot? */
-	playback: function() {
-
-	},
-	// timer for how long the puzzle takes to solve
-	startTimer: function() {
-
 	}
-}
+
 SudokuViewer.prototype.show = function() {
 	console.log('Sudoku appears here!');
 }
