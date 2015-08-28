@@ -1,8 +1,8 @@
 var DigitSet = require('./digitset');
 var cheating = require('lodash');
 
-new Grid(initString) // grid instance
-new Grid() // grid instance
+// new Grid(initString) // grid instance
+// new Grid() // grid instance
 
 
 function Grid(initString){
@@ -12,10 +12,10 @@ function Grid(initString){
 		for(var i=0; i < gridArray.length; i++){
 
 		if(gridArray[i] === "."){
-		 	sBoard[i] =  new DigitSet();
+		 	this.sBoard[i] =  new DigitSet();
 		} else {
-		 	sBoard[i] = new DigitSet(i);
-		 	sBoard[i].set(gridArray[i]);
+		 	this.sBoard[i] = new DigitSet(i);
+		 	this.sBoard[i].set(gridArray[i]);
 		}
 
 		}
@@ -55,10 +55,10 @@ function Grid(initString){
 	};
 	Grid.prototype.getRow = function(cellToken) {
 		if (cellToken) {
-			return this.groups(cellToken)[0];	
+			return this.groups(cellToken)[0];
 		} else {
 			return ["R: 0", "R: 1", "R: 2", "R: 3", "R: 4", "R: 5", "R: 6", "R: 7", "R: 8"];
-		}	
+		}
 	};
 
 
@@ -77,6 +77,7 @@ function Grid(initString){
 		} else {
 			return ["B: 0", "B: 1", "B: 2", "B: 3", "B: 4", "B: 5", "B: 6", "B: 7", "B: 8"];
 		}
+	}
 
 
 	Grid.prototype.getPossible = function(cellToken) {
@@ -98,7 +99,7 @@ function Grid(initString){
 		// 	// } else {
 
 			// }
-		}
+		// }
 	    // digitSet of all known digits in digits in same row,
 		// col, or block OR
 		// array of digitSets of all neighbors
@@ -146,27 +147,30 @@ function Grid(initString){
 		for(var i=0; i < gridArray.length; i++) {
 			savedBoard[i] = sBoard[i];
 			return savedBoard
-	};
+	}
+};
 
 	Grid.prototype.restore = function(savedState) {
 		for(var i=0; i < gridArray.length; i++) {
 			sBoard[i] = savedState[i];
 			return sBoard
-	};
-
-	Grid.prototype.isInvalid = function() {
-		if (this.possibilities)
-		//return true if notices any problems, else false?
-	};
-
-	Grid.prototype.remaining = function() {
-		// if (sBoard.length > 1){
-		// 	return id;
-		}
 	}
+};
+
+
+	// Grid.prototype.isInvalid = function() {
+	// 	if (this.possibilities)
+	// 	//return true if notices any problems, else false?
+	// };
+
+	// Grid.prototype.remaining = function() {
+	// 	// if (sBoard.length > 1){
+	// 	// 	return id;
+	// 	}
+	// }
 
 
 
-var game1 = new Grid('.94...13..............76..2.8..1.....32.........2...6.....5.4.......8..7..63.4..8');
+// var game1 = new Grid('.94...13..............76..2.8..1.....32.........2...6.....5.4.......8..7..63.4..8');
 
 module.exports = Grid;

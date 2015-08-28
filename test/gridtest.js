@@ -23,7 +23,6 @@ describe('Grid constructor', function() {
 		var rowCells = [18, 19, 20, 21, 22, 23, 24, 25, 26];
 
 	  	it('should return array of cell tokens associated with groupToken', function() {
-	    	console.log(gridTester.cells("R: 2"));
 				expect(gridTester.cells("R: 2")).to.deep.equal(rowCells);
 	    });
 	  }),
@@ -57,7 +56,7 @@ describe('Grid constructor', function() {
 
 	describe('getRow(cellToken)', function() {
 	  	it('should return the row token for square 28', function() {
-	    	expect(gridTester.getRow(28)).to.equal("R: 1");
+	    	expect(gridTester.getRow(28)).to.equal("R: 3");
 	    });
 	  }),
 
