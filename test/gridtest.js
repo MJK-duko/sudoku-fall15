@@ -8,44 +8,56 @@ var gridTester = new Grid("............942.8.16.....29........89.6.....14..25...
 describe('Grid constructor', function() {
 
 	describe('cells()', function() {
+
+		var gridTester = new Grid("............942.8.16.....29........89.6.....14..25......4.......2...8.9..5....7..");
+		var cellArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80];
+
 	  	it('should return array of all cell tokens', function() {
-	    	expect(Grid.cells).to.be([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80]);
+	    	expect(gridTester.cells()).to.deep.equal(cellArray);
 	    });
 	  }),
 
 	describe('cells(groupToken)', function() {
+
+		var gridTester = new Grid("............942.8.16.....29........89.6.....14..25......4.......2...8.9..5....7..");
+		var rowCells = [18, 19, 20, 21, 22, 23, 24, 25, 26];
+
 	  	it('should return array of cell tokens associated with groupToken', function() {
-	    	expect(cells(groupToken)).to.be.a('array');
+	    	console.log(gridTester.cells("R: 2"));
+				expect(gridTester.cells("R: 2")).to.deep.equal(rowCells);
 	    });
 	  }),
 
 	describe('groups()', function() {
 	  	it('array of all group tokens', function() {
-	    	expect(groups).to.be.a('array');
+	    	expect(gridTester.groups()).to.be.a('array');
 	    });
 	  }),
 
 	describe('groups(cellToken)', function() {
-	  	it('array of all group tokens associated with cellToken', function() {
-	    	expect(groups(cellToken)).to.be.a('array');
-	    });
-	  }),
+
+		var gridTester = new Grid("............942.8.16.....29........89.6.....14..25......4.......2...8.9..5....7..");
+
+		  	it('group tokens for a specific cell token', function() {
+		    	expect(gridTester.groups(0)).to.deep.equal(["R: 0", "C: 0", "B: 0"]);
+		    });
+		  }),
 
 	describe('getRow()', function() {
 	  	it('array of groupTokens (all rows)', function() {
-	    	expect(getRow).to.be.a('array');
+	    	expect(gridTester.getRow()).to.be.a('array');
 	    });
 	  }),
 
 	describe('getRow(cellToken)', function() {
 	  	it('groupToken (row)', function() {
-	    	expect(getRow(cellToken)).to.be.a('array');
+	    	expect(gridTester.getRow(28)).to.be.a('array');
 	    });
 	  }),
 
 	describe('getCol()', function() {
 	  	it('array of groupTokens (all cols)', function() {
-	    	expect(getCol).to.be.a('array');
+	    	expect(gridTester.getCol(18)).to.be.a('array');
 	    });
 	  }),
 

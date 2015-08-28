@@ -7,7 +7,7 @@ var DigitSet = require('./digitset');
 function Grid(initString){
 	var sBoard = [];
 	gridArray = initString.split("");
-		for(i=0;i<gridArray.length; i++){
+		for(var i=0;i<gridArray.length; i++){
 
 		 if(gridArray[i] === "."){
 		 	 sBoard[i] =  new DigitSet();
@@ -15,29 +15,25 @@ function Grid(initString){
 		 		sBoard[i] = new DigitSet();
 		 		sBoard[i].set(gridArray[i]);
 
-		 	};
+		 	}
 	}
+}
 
-	};
 
-
-	Grid.prototype.cells =  function(){
-		var Snuffleupagus = [];
-		for (tokens in sBoard){
-			Snuffleupagus.push(tokens);
+	Grid.prototype.cells =  function(groupToken){
+		// if parameter is provided, return array of cell tokens associated with groupToken
+		if (groupToken) {
+			var elmo = [];
+			for (var i=0; i < 81; i++ ){
+			if (groupToken === this.groups(i)[0] || groupToken === this.groups(i)[1] || groupToken === this.groups(i)[2]) {
+				elmo.push(i);
 		}
-		return Snuffleupagus;
-		}
-
-	Grid.prototype.cells = function(groupToken) {
-		var elmo = [];
-		for ( i=0; i < 81; i++ ){
-		if (groupToken === this.groups(i)[0] || groupToken === this.groups(i)[1] || groupToken === this.groups(i)[2]){
-			elmo.push(i);
-		}
-		// array of cell tokens associated with groupToken
 	}
-		return elmo;
+	return elmo;
+	} else {
+		// otherwise, just return an array of all the cell tokens
+		return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80];
+	}
 	};
 
 	Grid.prototype.groups = function() {
