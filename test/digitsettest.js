@@ -16,7 +16,7 @@ describe('DigitSet testing', function() {
 
 
 //size ----- IS WORKING
-  describe('The size of the DigitSet', function() {
+  describe(".size()", function() {
     var dTester = new DigitSet();
     it('should be equal to 9', function() {
       expect(dTester.size()).to.equal(9);
@@ -26,7 +26,7 @@ describe('DigitSet testing', function() {
 
 
 //set ---- IS WORKING
-   describe('The digitSet set function can accept a new array', function() {
+   describe('.set()', function() {
     var dTester = new DigitSet();
 
     before( function(){
@@ -45,7 +45,7 @@ describe('DigitSet testing', function() {
 
 
 //add --- IS WORKING
-   describe('The digitSet can be added into', function() {
+   describe('.add()', function() {
     var dTester = new DigitSet();
 
     before(function(){
@@ -61,7 +61,7 @@ describe('DigitSet testing', function() {
 //expect([1,2,3]).to.include(2);
 
 //eliminate
-   describe('The DigitSet be able to eliminate', function() {
+   describe('.eliminate()', function() {
      var dTester = new DigitSet();
 
      before(function() {
@@ -69,14 +69,14 @@ describe('DigitSet testing', function() {
     });
 
     it('should eliminate one or more indexes from array', function() {
-      expect(dTester.possibilities).to.not.include(7);
+      expect(dTester/*.possibilities*/).to.not.include(7);
     });
   }),
 
 
 
 //toString
-   describe('The digitSet', function() {
+   describe('.toString()', function() {
     it('should return a number or an array.', function() {
       expect(toString).to.be.a('number' || 'array');
     });
@@ -85,7 +85,7 @@ describe('DigitSet testing', function() {
 
 
 //toArray
-   describe('The digitSet', function() {
+   describe('.toArray()', function() {
     it('should return a number or an array.', function() {
       expect(toArray).to.be.a('number' || 'array');
     });
@@ -94,7 +94,7 @@ describe('DigitSet testing', function() {
 
 
 //contains ----- IS WORKING
-   describe('The DigitSet should contain', function() {
+   describe('.contains()', function() {
     var dTester = new DigitSet();
     
     it('should contain', function() {

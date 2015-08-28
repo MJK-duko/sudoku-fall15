@@ -26,6 +26,7 @@ function DigitSet() {
 				this.possibilities.splice(i,1);
 			}
 		}
+		return this.possibilities;
 	};
 
 	DigitSet.prototype.eliminate = function(digitSet){
