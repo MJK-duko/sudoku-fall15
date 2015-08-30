@@ -9,8 +9,7 @@ function Grid(initString){
 	this.sBoard = [];
 
 	var gridArray = initString.split("");
-		for(var i=0; i < gridArray.length; i++){
-
+	for(var i=0; i < gridArray.length; i++){
 		if(gridArray[i] === "."){
 		 	this.sBoard[i] =  new DigitSet();
 		} else {
@@ -18,9 +17,9 @@ function Grid(initString){
 		 	this.sBoard[i].set(gridArray[i]);
 		}
 
-		}
+	}
 
-}
+};
 	Grid.prototype.cells =  function(groupToken){
 		// if parameter is provided, return array of cell tokens associated with groupToken
 		if (groupToken) {
