@@ -32,10 +32,11 @@ function DigitSet() {
 	DigitSet.prototype.eliminate = function(digitSet){
 
 	};
-	
+
 
 	DigitSet.prototype.toString = function() {
 		this.possibilities = this.possibilities.join();
+
 	};
 
 	DigitSet.prototype.toArray = function(){
@@ -51,18 +52,18 @@ function DigitSet() {
 		if (this.possibilities[i] === num){
 				console.log(this.possibilities[i]);
 				counter = true;
-			} 
-			
-		
+			}
+
+
 	}
 	return counter;
 	};
 
 	DigitSet.prototype.isUncertain = function(){
-		if (possibilities.length < 1){
-			return true;
-		} else {
+		if (this.possibilities > 0){
 			return false;
+		} else {
+			return true;
 		}
 	};
 

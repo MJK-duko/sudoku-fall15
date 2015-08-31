@@ -1,4 +1,4 @@
-var DigitSet = require('./digitset');
+var DigitSet = require('./digitset.js');
 var cheating = require('lodash');
 
 // new Grid(initString) // grid instance
@@ -125,15 +125,32 @@ function Grid(initString){
 	};
 
 	Grid.prototype.groupHas = function(groupToken) {
+		// get array of cells for whatever group token
 		var squares = this.cells(groupToken);
+
+		// create new digitset
 		var blurg = new DigitSet();
 		var arr = [];
-		for(var i=0; i < squares.length; i++){
-			if (this.sBoard[squares[i]].possibilites >= 0) {
-			arr.push(this.sBoard[squares[i]].possibilites);
+
+		// look through the sBoard, and if the index of sBoard (b) matches any of the values in squares, include that value
+		squares.forEach(function (a) {
+			for (var i=0; i<squares.length; i++) {
+				var 
+				if (b === squares[i]) {
+					return true;
+				}
+			}
+		});
+
+		// this is the hangup. arr[i].possibilites returns undefined for ALL values for some reason...
+		var returnArr = [];
+		for (var i=0; i<arr.length; i++) {
+			// console.log(arr[i]);
+			if (!(arr[i].isUncertain())) {
+				blurg.add(arr[i]);
+			}
 		}
-		}
-		blurg.set(arr);
+		// blurg.set(returnArr);
 		console.log(blurg);
 		return blurg;
 	}
