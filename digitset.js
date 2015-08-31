@@ -11,7 +11,7 @@ function DigitSet() {
 	};
 
 	DigitSet.prototype.set = function(arrayOfDigits){
-		this.possibilities = arrayOfDigits;
+		this.possibilities = underscore.union(arrayOfDigits);
 		// return this.possibilities;
 	};
 
@@ -20,7 +20,6 @@ function DigitSet() {
 	};
 
 	DigitSet.prototype.eliminate = function(digit){
-
 		for(var i=0; i<=this.possibilities.length; i++){
 			if(digit === this.possibilities[i]){
 				this.possibilities.splice(i,1);
@@ -30,16 +29,17 @@ function DigitSet() {
 	};
 
 	DigitSet.prototype.eliminate = function(digitSet){
-
+		this.possibilities = underscore.difference(digitSet)
 	};
 	
 
 	DigitSet.prototype.toString = function() {
-		this.possibilities = this.possibilities.join();
+		return this.possibilities.join(',');
+		//this.possibilities = this.possibilities.join();
 	};
 
 	DigitSet.prototype.toArray = function(){
-		this.possibilities.split(",");
+		return this.possibilities.split(",");
 	};
 
 
@@ -59,7 +59,7 @@ function DigitSet() {
 	};
 
 	DigitSet.prototype.isUncertain = function(){
-		if (possibilities.length < 1){
+		if (this.possibilities.length < 1){
 			return true;
 		} else {
 			return false;

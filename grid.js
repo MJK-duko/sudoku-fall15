@@ -138,7 +138,7 @@ function Grid(initString){
 	}
 
 	Grid.prototype.groupNeeds = function(groupToken) {
-		var array = [1,2,3,4,5,6,7,8,9];
+		var array = new DigitSet(); // or [1,2,3,4,5,6,7,8,9]
 		var squareNeeds = this.groupHas(groupToken);
 
 		return cheating.difference(squareNeeds, array);
